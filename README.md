@@ -10,11 +10,9 @@ This project focuses on solving real-world backend challenges such as **concurre
 
 The system is divided into independent services:
 
-- **API Gateway** → Central entry point, routes requests to services  
-- **Auth Service** → Handles authentication and authorization (JWT-based)  
+- **API Gateway** →  Handles authentication , authorization (JWT-based) And routes requests to services  
 - **Booking Service** → Manages reservations with transaction handling  
 - **Flight Service** → Manages flight data and seat inventory  
-- **Notification Service** → Handles asynchronous updates and alerts  
 
 ---
 
@@ -51,10 +49,8 @@ The system is divided into independent services:
 flight-booking-system/
 │
 ├── API-gateway/
-├── auth-service/
 ├── booking-service/
 ├── flight-service/
-├── notification-service/
 │
 └── README.md
 
