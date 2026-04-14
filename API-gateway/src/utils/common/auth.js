@@ -1,0 +1,35 @@
+const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
+const { ServerConfig } = require('../../config');
+
+function checkPassword(plainPass,encryptedPass){
+    try {
+        return bcrypt.compareSync(plainPass, encryptedPass);
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
+ function createToken(input){
+    try {
+        return jwt.sign(input,ServerConfig.JWT_SECRET,{expire : ServerConfig.JWT_EXPIRY})
+    } catch (error) {
+        
+    }
+}
+
+function verifytoken(token){
+    try {
+        return jwt.verify(token,ServerConfig.JWT_SECRET)
+    } catch (error) {
+        console.log(error);
+        throw error;
+    }
+}
+
+module.exports={
+    checkPassword,
+    createToken,
+    verifytoken,
+}
